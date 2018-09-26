@@ -1,0 +1,20 @@
+filetype gp;
+filetype bam;
+filetype tsv;
+filetype pickle;
+
+
+stage SPLIT_AND_EXTRACT(
+    in   gp        transcripts,
+    in   int       lower_size_cutoff,
+    in   int       upper_size_cutoff,
+    in   bam       possorted_bam,
+    in   tsv       cell_barcodes,
+    in   string[]  valid_chroms,
+    in   string    kit_type,
+    out  csv       results,
+    src  py        "stages/split_and_extract",
+) split (
+    in  string[]   tx_subset,
+    out pickle     subset_results,
+)

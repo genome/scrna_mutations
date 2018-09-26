@@ -1,0 +1,11 @@
+@include "split_and_extract.mro"
+
+call SPLIT_AND_EXTRACT(
+    transcripts = "basic.no_chr.gp",
+    lower_size_cutoff = 250,
+    upper_size_cutoff = 11000,
+    possorted_bam = "cellranger/outs/possorted_genome_bam.bam",
+    cell_barcodes = "cellranger/outs/filtered_gene_bc_matrices_mex/GRCh38/barcodes.tsv",
+    valid_chroms = ["1", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "2", "20", "21", "3", "4", "5", "6", "7", "8", "9", "X", "Y"],
+    kit_type = "5'",
+)
