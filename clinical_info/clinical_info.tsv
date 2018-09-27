@@ -1,0 +1,6 @@
+UPN	Age	Sex	Race	FAB	%_BM_Blasts_Flow	%_BM_Blasts_Morphology	Total_WBC_PB	Cytogenetics
+508084	38	M	NH/C	M4	52	53	140.1	46 XY
+548327	52	M	NH/C	M1	75	85	63.7	46 XY
+721214	41	F	NH/C	M1	91	90	134.4	failed
+782328	53	M	NH/C	AML w/MDS	33	22	17	"46,XY,dup(1)(q21q32)[20/20]"
+809653	60	F	NH/C	M1	36	28	16	"44-47, XX, t(1;15)(q32;q26)[14/20], del(5)(q13-q33)[19/20], -7[20/20], +8[7/20], del(12)(p11.2)[15/20], del17(q21)[8/20], der(22)t(1;22)(p13;p11.2){20/20]"
