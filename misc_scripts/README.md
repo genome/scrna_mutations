@@ -2,12 +2,12 @@ Two indels were genotyped semi-manually, as alignment issues in repetitive regio
 
 ### Step 1: extract data from region
 
-    * 809653 CEBPA deltion
+    # 809653 CEBPA deletion
     region=19:33301989-33301990
     samtools view -hb ${bam} ${region} > 809653_CEBPA.bam
     samtools index 809653_CEBPA.bam
 
-    * 721214 & 548327 NPM1 insertions
+    # 721214 & 548327 NPM1 insertions
     region=5:171410538-171410546
     samtools view -hb ${bam} ${region} > 721214_NPM1.bam
     samtools index 721214_NPM1.bam
