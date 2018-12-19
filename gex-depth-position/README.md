@@ -7,13 +7,16 @@ After execution, the `outs` folder will contain a single CSV file with three col
 
 ## Installation
 
-In order to run this pipeline, you need to have [Martian](https://github.com/martian-lang/martian) and [CAT](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit) installed. Martian provides the pipeline execution environment, and CAT provides library modules that are used to parse the input transcript set.
+In order to run this pipeline, you need to have [Martian](https://github.com/martian-lang/martian) and [CAT](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit) installed. Martian provides the pipeline execution environment, and CAT provides library modules that are used to parse the input transcript set. You don't need to install anything from CAT but the python parts (`pip install git+https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit`).
 
 ## Execution
 
-Modify the `example.mro` file provided to point to the outputs of your Cell Ranger run. The transcripts file must be in [genePred extended](https://genome.ucsc.edu/FAQ/FAQformat.html#format9) format. You can use [UCSC tools](http://hgdownload.soe.ucsc.edu/admin/exe/) to convert to this format, including `gff3ToGenePred`. The genePred used in this study was extracted directly from the UCSC MySQL database with the command
+Modify the `example.mro` file provided to point to the outputs of your Cell Ranger run. The `transcripts` file must be in [genePred extended](https://genome.ucsc.edu/FAQ/FAQformat.html#format9) format. You can use [UCSC tools](http://hgdownload.soe.ucsc.edu/admin/exe/) to convert to this format, including `gff3ToGenePred`. The genePred used in this study was extracted directly from the UCSC MySQL database with the command
 
 ```
 mysql --user=genome --host=genome-mysql.soe.ucsc.edu -Ne 'select * from wgEncodeGencodeBasicV27' hg38 | cut -f 2- > basic.gp
 ```
 
+In addition to the `transcripts` field, you will need to point `possorted_bam` and `cell_barcodes` to the output of Cellranger you are wanting to run this against. `valid_chroms` is a chromosome whitelist. Any transcripts in the genePred file not on any of these will be discarded. Finally, the `kit_type` field accepts either `3'` or `5'` and simply transforms the coordinates appropriately so that the resulting data file is in transcript orientation.
+
+Once you have this set up, you can execute the script with `export MROPATH=$REPO/mro; mrp example.mro runfolder --jobmode=$JOBMODE` where `$REPO` is the location you cloned this folder to and `$JOBMODE` is one of the standard batch systems that cellranger supports.
