@@ -193,7 +193,7 @@ def consensus(all_file, var, outfile, gene):
         iUuni_alt = []
         itUuni_alt = []
         iCBuniq_barcodes_raw = []
-        for ii, vv in di.iteritems():
+        for ii, vv in di.items():
             iCBuniq_barcodes_raw.append(ii)
             iUuni_alt.append(vv['alt'])
             itot1 = vv['alt'] + vv['ref']
