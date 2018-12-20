@@ -215,10 +215,10 @@ def consensus(all_file, var, outfile, gene):
 
         if gene == 'CEBPA':
             head = "19\t33301989\t33301990\tCC\t-\tCEBPA\tframe_shift_del"
-            print '{}\t{}\t{}\t{}\t{}\t{}'.format(head, itUuni_alt_c, iUuni_alt_c, _uni_indelU, iCBfin_umi, iUBfin_umi)
+            print('{}\t{}\t{}\t{}\t{}\t{}'.format(head, itUuni_alt_c, iUuni_alt_c, _uni_indelU, iCBfin_umi, iUBfin_umi))
         elif gene == 'NPM1':
             head = "5\t171410539\t171410540\t-\tTCTG\tNPM1\tframe_shift_ins"
-            print '{}\t{}\t{}\t{}\t{}\t{}'.format(head, itUuni_alt_c, iUuni_alt_c, _uni_indelU, iCBfin_umi, iUBfin_umi)
+            print('{}\t{}\t{}\t{}\t{}\t{}'.format(head, itUuni_alt_c, iUuni_alt_c, _uni_indelU, iCBfin_umi, iUBfin_umi))
 
     return
 
