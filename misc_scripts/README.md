@@ -19,7 +19,7 @@ Two indels were genotyped semi-manually, as alignment issues in repetitive regio
 
 ### Tool Usage
 ```{shell}
-(py27) sridhar:scripts$ python fetch_manual_ins_del.py -h
+python3 fetch_manual_ins_del.py -h
 usage: fetch_manual_ins_del.py [-h] bam_file gene barcodes upn
 
 Parse CB barcodes from Single cell rna seq data
