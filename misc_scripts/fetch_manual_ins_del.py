@@ -138,7 +138,7 @@ def consensus(all_file, var, outfile, gene):
         head = "5\t171410539\t171410540\t-\tTCTG\tNPM1\tframe_shift_ins"
     else:
         head = "19\t33301989\t33301990\tCC\t-\tCEBPA\tframe_shift_del"
-    with open(outfile + '_counts_CB.tsv', 'wb') as w, \
+    with open(outfile + '_counts_CB.tsv', 'w+') as w, \
             open(outfile + '_counts_UB.tsv', 'w+') as sai:  # sai == UB , w == CB
         for iutags in uniq_raw_barcodes_ins:
             if iutags in indelbarU_count['ref'] and iutags in indelbarU_count['ref']:
